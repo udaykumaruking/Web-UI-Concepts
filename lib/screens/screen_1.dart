@@ -23,13 +23,14 @@ class Screen1 extends StatelessWidget {
             padding: EdgeInsets.only(
               top: 28,
               left: 103,
+              right: 103,
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
-                  textBaseline: TextBaseline.alphabetic,
-                  // mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       'Browk Shop',
@@ -37,22 +38,121 @@ class Screen1 extends StatelessWidget {
                         textStyle: TextStyle(
                           color: kRichBlack,
                           fontSize: 24,
-                          letterSpacing: -0.22,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
-                    BuildSizedBox(width: 362),
-                    MenuItem('Catalog'),
-                    BuildSizedBox(width: 15),
-                    MenuItem('Delivery'),
-                    BuildSizedBox(width: 10),
-                    MenuItem('Payment'),
-                    BuildSizedBox(width: 15),
-                    MenuItem('About Us'),
-                    BuildSizedBox(width: 15),
-                    MenuItem('Contact Us')
+                    Row(
+                      children: [
+                        MenuItem('Catalog'),
+                        BuildSizedBox(width: 20),
+                        MenuItem('Delivery'),
+                        BuildSizedBox(width: 20),
+                        MenuItem('Payment'),
+                        BuildSizedBox(width: 20),
+                        MenuItem('About Us'),
+                        BuildSizedBox(width: 20),
+                        MenuItem('Contact Us'),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        BuildButton(
+                          containerColor: kOpaRichBlack,
+                          textColor: kRichBlack,
+                          text: 'Sign In',
+                        ),
+                        BuildSizedBox(width: 12),
+                        BuildButton(
+                          containerColor: kGreenSheen,
+                          textColor: kWhite,
+                          text: 'Join Now',
+                        ),
+                      ],
+                    ),
                   ],
-                )
+                ),
+                Row(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Be fashionable \nthis summer',
+                          style: GoogleFonts.playfairDisplay(
+                              fontSize: 64,
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: -0.58,
+                              textStyle: TextStyle()),
+                        ),
+                        BuildSizedBox(height: 15),
+                        Text(
+                          'We arranged a liquidation before the start of the\nseason. Buy summer clothes now with a 50% discount',
+                          style: GoogleFonts.roboto(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                        BuildSizedBox(height: 25),
+                        Row(
+                          children: [
+                            BuildButton(
+                              containerColor: kGreenSheen,
+                              text: 'Catalog',
+                              textColor: kWhite,
+                            ),
+                            BuildSizedBox(width: 15),
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  color: kOpaRichBlack),
+                              child: BuildPadding(
+                                leftPad: 15,
+                                rightPad: 15,
+                                topPad: 9,
+                                bottomPad: 9,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    BuildPadding(
+                                      bottomPad: 0.2,
+                                      leftPad: 0.2,
+                                      rightPad: 0.2,
+                                      topPad: 0.2,
+                                      child: Container(
+                                        child: Icon(
+                                          Icons.keyboard_arrow_right_sharp,
+                                          color: Colors.white,
+                                          size: 32,
+                                        ),
+                                        decoration: BoxDecoration(
+                                            color: kGreenSheen,
+                                            borderRadius:
+                                                BorderRadius.circular(100)),
+                                      ),
+                                    ),
+                                    BuildSizedBox(width: 15),
+                                    Text(
+                                      'See video about collection',
+                                      style: GoogleFonts.roboto(
+                                        fontWeight: FontWeight.w400,
+                                        color: kRichBlack,
+                                        letterSpacing: 0.5,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                BuildSizedBox(height: 1)
               ],
             ),
           ),
